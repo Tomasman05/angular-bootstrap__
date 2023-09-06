@@ -1,9 +1,16 @@
 <div class="container-fluid">
-  <h1>Tanár</h1>
-  {{obj|json}}
+  <h1 class="text-center">Tanárok</h1>
+  <!-- {{obj|json}}
   <br>
   <br>
   <div class="row" *ngFor="let tancsi of obj">
     {{tancsi.name}}
+  </div>
+  <br>
+  <br> -->
+  <div class="row">
+    <div class="col" *ngFor = "let oszlop of oszlopok">
+      {{oszlop}}
+    </div>
   </div>
 </div>

@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'projekt2';
   oszlopok = ["name","age","hair"]
-  obj =[
+  obj:any =[
     {name:"Béla",age:31,hair:"barna"},
     {name:"Attila",age:48,hair:"őszül"},
     {name:"Károly",age:40,hair:"nincs"},
