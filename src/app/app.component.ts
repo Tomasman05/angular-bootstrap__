@@ -1,3 +1,4 @@
+import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -20,7 +21,8 @@ export class AppComponent {
     {name:"Józsi",age:55,hair:"fekete"},
     {name:"Sallai",age:56,hair:"barna"},
   ]
-  torol(tancsi:any){
-    console.log("Törölendő: "+ tancsi)
+  torol(tancsi:any, i:number){
+    this.obj.splice(i,1)
+    // this.obj = this.obj.filter((e:any)=>e!=tancsi)
   }
 }
