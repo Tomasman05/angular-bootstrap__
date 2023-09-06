@@ -1,5 +1,6 @@
 import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
+import { ConfigService } from './app-config.service';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +9,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'projekt2';
-  oszlopok = [
-    {key:"name",texthu:"Név",type:"plain"},
-    {key:"age",texthu:"Kor",type:"number"},
-    {key:"hair",texthu:"Hajszín",type:"text"}]
-
+  ujTancsi:any={}
+  oszlopok:any
   obj:any =[
     {name:"Béla",age:31,hair:"barna"},
     {name:"Attila",age:48,hair:"őszül"},
@@ -27,5 +25,12 @@ export class AppComponent {
   }
   mentes(tancsi:any,i:number){
 
+  }
+  uj(){
+    this.obj.push(this.ujTancsi)
+    this.ujTancsi=""
+  }
+  constructor(private config:ConfigService) { 
+    this.oszlopok=config.getOszlopok()
   }
 }
