@@ -9,9 +9,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'projekt2';
   oszlopok = [
-    {key:"name",texthu:"Név"},
-    {key:"age",texthu:"Kor"},
-    {key:"hair",texthu:"Hajszín"}]
+    {key:"name",texthu:"Név",type:"plain"},
+    {key:"age",texthu:"Kor",type:"number"},
+    {key:"hair",texthu:"Hajszín",type:"text"}]
 
   obj:any =[
     {name:"Béla",age:31,hair:"barna"},
@@ -24,5 +24,8 @@ export class AppComponent {
   torol(tancsi:any, i:number){
     this.obj.splice(i,1)
     // this.obj = this.obj.filter((e:any)=>e!=tancsi)
+  }
+  mentes(tancsi:any,i:number){
+
   }
 }

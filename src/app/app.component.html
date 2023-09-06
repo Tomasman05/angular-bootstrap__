@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <h1 class="text-center">Tanárok</h1>
-  <!-- {{obj|json}}
-  <br>
+  {{obj|json}}
+  <!-- <br>
   <br>
   <div class="row" *ngFor="let tancsi of obj">
     {{tancsi.name}}
@@ -9,7 +9,7 @@
   <br>
   <br> -->
   <div class="row text-center">
-    <div class="col" *ngFor = "let oszlop of oszlopok">
+    <div class="col" *ngFor="let oszlop of oszlopok">
       {{oszlop.texthu}}
     </div>
     <div class="col">
@@ -18,11 +18,16 @@
   </div>
   <div class="row">
     <div class="row my-2" *ngFor="let tancsi of obj; let i = index">
-      <div class="col text-center" *ngFor = "let oszlop of oszlopok">
-        {{tancsi[oszlop.key]}}
+      <div class="col text-center" *ngFor="let oszlop of oszlopok">
+        <ng-container *ngIf="oszlop.type!='plain';else plain">
+          <input [(ngModel)]="tancsi[oszlop.key]" [value]="tancsi[oszlop.key]" [type]="oszlop.type" class="form-control">
+        </ng-container>
+        <ng-template #plain>
+          {{tancsi[oszlop.key]}}
+        </ng-template>
       </div>
       <div class="col text-center">
-        <button type="button" class="btn btn-warning me-2">Mentés</button>
+        <button (click)="mentes(tancsi,i)" type="button" class="btn btn-warning me-2">Mentés</button>
         <button (click)="torol(tancsi,i)" type="button" class="btn btn-danger ">Törlés</button>
       </div>
     </div>
