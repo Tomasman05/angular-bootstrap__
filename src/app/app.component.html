@@ -8,9 +8,23 @@
   </div>
   <br>
   <br> -->
-  <div class="row">
+  <div class="row text-center">
     <div class="col" *ngFor = "let oszlop of oszlopok">
-      {{oszlop}}
+      {{oszlop.texthu}}
+    </div>
+    <div class="col">
+      Műveletek
+    </div>
+  </div>
+  <div class="row">
+    <div class="row my-2" *ngFor="let tancsi of obj; let i = index">
+      <div class="col text-center" *ngFor = "let oszlop of oszlopok">
+        {{tancsi[oszlop.key]}}
+      </div>
+      <div class="col text-center">
+        <button type="button" class="btn btn-warning me-2">Mentés</button>
+        <button (click)="torol(tancsi,i)" type="button" class="btn btn-danger ">Törlés</button>
+      </div>
     </div>
   </div>
 </div>
