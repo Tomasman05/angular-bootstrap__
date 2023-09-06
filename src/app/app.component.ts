@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'projekt2';
+  oszlopok = ["name","age","hair"]
   obj =[
     {name:"Béla",age:31,hair:"barna"},
     {name:"Attila",age:48,hair:"őszül"},

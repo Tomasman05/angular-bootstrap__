@@ -1,1 +1,9 @@
-<h1>Tanár</h1>
+<div class="container-fluid">
+  <h1>Tanár</h1>
+  {{obj|json}}
+  <br>
+  <br>
+  <div class="row" *ngFor="let tancsi of obj">
+    {{tancsi.name}}
+  </div>
+</div>
